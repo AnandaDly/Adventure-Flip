@@ -13,7 +13,7 @@ const CHARACTER_IMAGES = {
   default: imgDefault
 }
 
-const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
+const API_URL = "/api";
 
 export default function StoryScreen({ theme }) {
   // State
