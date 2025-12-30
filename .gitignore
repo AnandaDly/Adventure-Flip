@@ -1,0 +1,9 @@
+# Abaikan node_modules di folder mana saja
+**/node_modules
+**/dist
+**/build
+**/.DS_Store
+
+# Abaikan environment variables
+**/.env
+**/.env.local
