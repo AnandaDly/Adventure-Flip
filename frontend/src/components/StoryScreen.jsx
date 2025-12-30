@@ -13,6 +13,8 @@ const CHARACTER_IMAGES = {
   default: imgDefault
 }
 
+const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
+
 export default function StoryScreen({ theme }) {
   // State
   const [segments, setSegments] = useState([]) 
@@ -30,7 +32,8 @@ export default function StoryScreen({ theme }) {
     try {
       const contextToSend = storyHistory + (userAnswer ? `\nAnak: "${userAnswer}"` : "")
 
-      const res = await fetch("http://localhost:3001/story", {
+      // GANTI URL FETCH MENGGUNAKAN VARIABLE API_URL
+      const res = await fetch(`${API_URL}/story`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -58,6 +61,7 @@ export default function StoryScreen({ theme }) {
     if (history.length <= maxLength) return history;
     return "...(cerita sebelumnya)...\n" + history.slice(-maxLength);
   }
+
   function playQueue(queue) {
     if (queue.length === 0) {
       setMode("listening")
