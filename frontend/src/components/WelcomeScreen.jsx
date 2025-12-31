@@ -1,7 +1,7 @@
 export default function WelcomeScreen({ onStart }) {
   return (
     <div className="screen center">
-      <h1>🎧 Cerita Interaktif</h1>
+      <h1>Adventure Flip</h1>
       <p>Dengarkan cerita dan jawab dengan suaramu</p>
 
       <button className="start-button" onClick={onStart}>
